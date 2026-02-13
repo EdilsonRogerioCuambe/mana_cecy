@@ -1,0 +1,22 @@
+<svg width="500" height="150" viewBox="0 0 500 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Poppins:wght@400&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Icon: Abstract Heart Home -->
+  <g transform="translate(60, 75)">
+    <!-- Soft background circle -->
+    <circle cx="0" cy="0" r="45" fill="#E87A5E" opacity="0.1" />
+
+    <!-- Heart shape with roof-like top -->
+    <path d="M0 -25 L-20 -5 C-25 0 -25 10 -20 15 L0 35 L20 15 C25 10 25 0 20 -5 L0 -25 Z" fill="#E87A5E" />
+    <path d="M-12 5 A 5 5 0 0 1 -2 5" stroke="white" stroke-width="2" stroke-linecap="round" />
+    <path d="M12 5 A 5 5 0 0 0 2 5" stroke="white" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- Text -->
+  <text x="130" y="85" font-family="'Playfair Display', serif" font-size="64" font-weight="700" fill="#2C2C2C">Mana Cecy</text>
+  <text x="135" y="115" font-family="'Poppins', sans-serif" font-size="16" letter-spacing="4" fill="#E87A5E" text-transform="uppercase" font-weight="500">Mana dos Manos</text>
+</svg>
