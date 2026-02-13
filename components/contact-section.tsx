@@ -69,14 +69,14 @@ export function ContactSection() {
     },
     {
       icon: MapPin,
-      title: "Localizacao",
-      value: "Maputo, Mocambique",
+      title: "Localização",
+      value: "Maputo, Moçambique",
       href: "#",
       color: "bg-primary/10 text-primary",
     },
     {
       icon: Clock,
-      title: "Horario",
+      title: "Horário",
       value: "Seg - Sex, 8h - 18h",
       href: "#",
       color: "bg-primary/10 text-primary",

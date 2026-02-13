@@ -1,31 +1,31 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { useCallback, useEffect, useState } from "react"
 
 const testimonials = [
   {
     name: "Maria Fernanda",
-    role: "Mae e Esposa",
-    text: "A Mana dos Manos transformou o meu casamento. Os seus conselhos sao praticos, cheios de sabedoria e amor. Recomendo a todas as familias!",
+    role: "Mãe e Esposa",
+    text: "A Mana dos Manos transformou o meu casamento. Os seus conselhos são práticos, cheios de sabedoria e amor. Recomendo a todas as famílias!",
     initials: "MF",
   },
   {
-    name: "Joao Carlos",
-    role: "Pai de Familia",
-    text: "Participar nos workshops da Inocencia foi uma experiencia transformadora. Aprendi a comunicar melhor com a minha esposa e filhos.",
+    name: "João Carlos",
+    role: "Pai de Família",
+    text: "Participar nos workshops da Inocência foi uma experiência transformadora. Aprendi a comunicar melhor com a minha esposa e filhos.",
     initials: "JC",
   },
   {
     name: "Ana Beatriz",
-    role: "Empresaria",
-    text: "O coaching de vida com a Inocencia ajudou-me a encontrar o equilibrio entre a minha carreira e a familia. Uma verdadeira inspiracao!",
+    role: "Empresária",
+    text: "O coaching de vida com a Inocência ajudou-me a encontrar o equilíbrio entre a minha carreira e a família. Uma verdadeira inspiração!",
     initials: "AB",
   },
   {
     name: "Teresa Manuel",
     role: "Professora",
-    text: "As palestras da Mana dos Manos tocam o coracao. Ela tem o dom de falar com verdade e compaixao sobre os desafios da vida familiar.",
+    text: "As palestras da Mana dos Manos tocam o coração. Ela tem o dom de falar com verdade e compaixão sobre os desafios da vida familiar.",
     initials: "TM",
   },
 ]
@@ -115,7 +115,7 @@ export function TestimonialsSection() {
             <button
               onClick={next}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-              aria-label="Proximo depoimento"
+              aria-label="Próximo depoimento"
             >
               <ChevronRight className="h-5 w-5" />
             </button>

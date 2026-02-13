@@ -1,9 +1,9 @@
-import { Instagram, Facebook, Mail, Heart } from "lucide-react"
+import { Facebook, Heart, Instagram, Mail } from "lucide-react"
 
 const quickLinks = [
-  { href: "#inicio", label: "Inicio" },
+  { href: "#inicio", label: "Início" },
   { href: "#sobre", label: "Sobre" },
-  { href: "#servicos", label: "Servicos" },
+  { href: "#servicos", label: "Serviços" },
   { href: "#galeria", label: "Galeria" },
   { href: "#depoimentos", label: "Depoimentos" },
   { href: "#contato", label: "Contato" },
@@ -18,7 +18,7 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <div className="flex flex-col leading-tight">
               <span className="font-serif text-xl font-bold text-foreground">
-                Inocencia Gaisse
+                Inocência Gaisse
               </span>
               <span className="text-xs tracking-widest uppercase text-muted-foreground">
                 Mana dos Manos
@@ -26,7 +26,7 @@ export function Footer() {
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
               Conselheira de Lar, Educadora Familiar e Coach de Vida.
-              Fortalecendo familias, edificando lares com amor e sabedoria.
+              Fortalecendo famílias, edificando lares com amor e sabedoria.
             </p>
             <div className="flex gap-3">
               <a
@@ -56,7 +56,7 @@ export function Footer() {
           {/* Quick Links */}
           <div className="flex flex-col gap-4">
             <h4 className="font-serif text-lg font-bold text-foreground">
-              Links Rapidos
+              Links Rápidos
             </h4>
             <nav className="flex flex-col gap-2">
               {quickLinks.map((link) => (
@@ -74,7 +74,7 @@ export function Footer() {
           {/* Services */}
           <div className="flex flex-col gap-4">
             <h4 className="font-serif text-lg font-bold text-foreground">
-              Servicos
+              Serviços
             </h4>
             <nav className="flex flex-col gap-2">
               <a
@@ -114,7 +114,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center gap-4 border-t border-border pt-8 sm:flex-row sm:justify-between">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Inocencia Gaisse. Todos os direitos
+            &copy; {new Date().getFullYear()} Inocência Gaisse. Todos os direitos
             reservados.
           </p>
           <p className="flex items-center gap-1 text-xs text-muted-foreground">

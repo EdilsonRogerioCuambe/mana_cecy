@@ -19,31 +19,31 @@ const _poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Inocencia Gaisse | Mana dos Manos',
-  description: 'Conselheira de Lar, Educadora Familiar e Coach de Vida. Fortalecendo familias, edificando lares com amor e sabedoria.',
-  keywords: ['conselheira de lar', 'educadora familiar', 'coach de vida', 'familia', 'relacionamento', 'casamento', 'inocencia gaisse', 'mana dos manos', 'mocambique'],
-  authors: [{ name: 'Inocencia Gaisse' }],
-  creator: 'Inocencia Gaisse',
-  publisher: 'Inocencia Gaisse',
+  description: 'Conselheira de Lar, Educadora Familiar e Coach de Vida. Fortalecendo famílias, edificando lares com amor e sabedoria.',
+  keywords: ['conselheira de lar', 'educadora familiar', 'coach de vida', 'família', 'relacionamento', 'casamento', 'inocencia gaisse', 'mana dos manos', 'moçambique'],
+  authors: [{ name: 'Inocência Gaisse' }],
+  creator: 'Inocência Gaisse',
+  publisher: 'Inocência Gaisse',
   metadataBase: new URL('https://manacecy.com'), // Replace with actual domain when known
   openGraph: {
     type: 'website',
     locale: 'pt_MZ',
     url: 'https://manacecy.com',
-    title: 'Inocencia Gaisse | Mana dos Manos',
-    description: 'Conselheira de Lar, Educadora Familiar e Coach de Vida. Fortalecendo familias, edificando lares.',
-    siteName: 'Inocencia Gaisse',
+    title: 'Inocência Gaisse | Mana dos Manos',
+    description: 'Conselheira de Lar, Educadora Familiar e Coach de Vida. Fortalecendo famílias, edificando lares.',
+    siteName: 'Inocência Gaisse',
     images: [
       {
         url: '/logo.svg', // Using the logo as a placeholder OG image for now
         width: 800,
         height: 600,
-        alt: 'Inocencia Gaisse - Mana dos Manos',
+        alt: 'Inocência Gaisse - Mana dos Manos',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Inocencia Gaisse | Mana dos Manos',
+    title: 'Inocência Gaisse | Mana dos Manos',
     description: 'Conselheira de Lar, Educadora Familiar e Coach de Vida.',
     images: ['/logo.svg'],
   },

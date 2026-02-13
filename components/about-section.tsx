@@ -5,31 +5,31 @@ const values = [
   {
     icon: Heart,
     title: "Amor",
-    description: "O amor e a base de toda transformacao familiar.",
+    description: "O amor é a base de toda transformação familiar.",
   },
   {
     icon: Users,
-    title: "Familia",
-    description: "Familias fortes constroem sociedades melhores.",
+    title: "Família",
+    description: "Famílias fortes constroem sociedades melhores.",
   },
   {
     icon: Star,
-    title: "Fe",
-    description: "A espiritualidade como guia para decisoes sabias.",
+    title: "Fé",
+    description: "A espiritualidade como guia para decisões sábias.",
   },
   {
     icon: BookOpen,
-    title: "Educacao",
-    description: "Conhecimento e a chave para relacoes saudaveis.",
+    title: "Educação",
+    description: "Conhecimento é a chave para relações saudáveis.",
   },
 ]
 
 const timeline = [
-  { year: "2015", event: "Inicio da jornada como conselheira familiar" },
-  { year: "2018", event: "Lancamento do projeto Mana dos Manos" },
-  { year: "2020", event: "Expansao para plataformas digitais" },
+  { year: "2015", event: "Início da jornada como conselheira familiar" },
+  { year: "2018", event: "Lançamento do projeto Mana dos Manos" },
+  { year: "2020", event: "Expansão para plataformas digitais" },
   { year: "2023", event: "Reconhecimento como influenciadora social" },
-  { year: "2025", event: "Consolidacao como referencia em aconselhamento" },
+  { year: "2025", event: "Consolidação como referência em aconselhamento" },
 ]
 
 export function AboutSection() {
@@ -46,7 +46,7 @@ export function AboutSection() {
             <div className="h-px w-12 bg-primary" />
           </div>
           <h2 className="font-serif text-4xl font-bold text-foreground md:text-5xl">
-            Quem e Mana dos Manos?
+            Quem é Mana dos Manos?
           </h2>
         </div>
 
@@ -56,7 +56,7 @@ export function AboutSection() {
             <div className="relative aspect-[4/5] w-full max-w-[400px] overflow-hidden rounded-2xl shadow-xl">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SaveGram.App_581807034_18541103884043485_3138854650538390452_n-Y82cnE3fmyXHLMXWNMq035jNs4GwrC.jpg"
-                alt="Inocencia Gaisse em traje tradicional"
+                alt="Inocência Gaisse em traje tradicional"
                 fill
                 className="object-cover object-top"
               />
@@ -67,38 +67,38 @@ export function AboutSection() {
 
           <div className="flex flex-col gap-6">
             <h3 className="font-serif text-3xl font-bold text-foreground">
-              Inocencia Gaisse
+              Inocência Gaisse
             </h3>
             <p className="leading-relaxed text-muted-foreground">
-              Sou Inocencia Gaisse, conhecida carinhosamente como Mana dos
-              Manos. Ha mais de uma decada, dedico a minha vida a fortalecer
-              familias e edificar lares atraves do aconselhamento, da educacao e
+              Sou Inocência Gaisse, conhecida carinhosamente como Mana dos
+              Manos. Há mais de uma década, dedico a minha vida a fortalecer
+              famílias e edificar lares através do aconselhamento, da educação e
               do amor.
             </p>
             <p className="leading-relaxed text-muted-foreground">
-              A minha missao e inspirar e capacitar mulheres, casais e familias a
-              construirem relacoes saudaveis, baseadas no respeito, na
-              comunicacao e nos valores que nos unem. Acredito profundamente que
-              familias fortes sao o alicerce de comunidades prosperas.
+              A minha missão é inspirar e capacitar mulheres, casais e famílias a
+              construírem relações saudáveis, baseadas no respeito, na
+              comunicação e nos valores que nos unem. Acredito profundamente que
+              famílias fortes são o alicerce de comunidades prósperas.
             </p>
 
             {/* Mission / Vision */}
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl bg-card p-6">
                 <h4 className="mb-2 font-serif text-lg font-bold text-primary">
-                  Missao
+                  Missão
                 </h4>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Fortalecer familias e edificar lares, promovendo relacoes
-                  saudaveis e duradouras.
+                  Fortalecer famílias e edificar lares, promovendo relações
+                  saudáveis e duradouras.
                 </p>
               </div>
               <div className="rounded-xl bg-card p-6">
                 <h4 className="mb-2 font-serif text-lg font-bold text-primary">
-                  Visao
+                  Visão
                 </h4>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Ser referencia em aconselhamento familiar, impactando positivamente milhares de familias.
+                  Ser referência em aconselhamento familiar, impactando positivamente milhares de famílias.
                 </p>
               </div>
             </div>
@@ -136,7 +136,7 @@ export function AboutSection() {
             <div className="flex items-center gap-3">
               <div className="h-px w-12 bg-primary" />
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">
-                Trajetoria
+                Trajetória
               </span>
               <div className="h-px w-12 bg-primary" />
             </div>

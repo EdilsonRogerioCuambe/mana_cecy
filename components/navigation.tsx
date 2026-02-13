@@ -4,9 +4,9 @@ import { Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 const navLinks = [
-  { href: "#inicio", label: "Inicio" },
+  { href: "#inicio", label: "Início" },
   { href: "#sobre", label: "Sobre" },
-  { href: "#servicos", label: "Servicos" },
+  { href: "#servicos", label: "Serviços" },
   { href: "#galeria", label: "Galeria" },
   { href: "#depoimentos", label: "Depoimentos" },
   { href: "#contato", label: "Contato" },
@@ -35,7 +35,7 @@ export function Navigation() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="#inicio" className="flex flex-col leading-tight">
           <span className="font-serif text-xl font-bold tracking-tight text-foreground">
-            Inocencia Gaisse
+            Inocência Gaisse
           </span>
           <span className="text-xs tracking-widest uppercase text-muted-foreground">
             Mana dos Manos

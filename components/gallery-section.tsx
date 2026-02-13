@@ -1,47 +1,38 @@
 "use client"
 
+import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react"
 import Image from "next/image"
-import { useState, useRef, useEffect, useCallback } from "react"
-import { X, ChevronLeft, ChevronRight, Heart } from "lucide-react"
+import { useCallback, useEffect, useState } from "react"
+import { createPortal } from "react-dom"
+
+const categories = ["Todas", "Tradicional", "Profissional", "Casual"]
 
 const galleryImages = [
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SaveGram.App_599397525_18545338651043485_97361349057261757_n-1tKAZ5BsTOsxPVk2dS9BHIIAdha3k5.jpg",
-    alt: "Inocencia Gaisse em vestido elegante",
+    alt: "Inocência Gaisse em vestido elegante",
     category: "Profissional",
-    height: "tall" as const,
-    caption: "Elegancia e confianca em cada detalhe",
+    caption: "Elegância e confiança em cada detalhe",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SaveGram.App_581807034_18541103884043485_3138854650538390452_n-Y82cnE3fmyXHLMXWNMq035jNs4GwrC.jpg",
-    alt: "Inocencia Gaisse em traje tradicional africano",
+    alt: "Inocência Gaisse em traje tradicional africano",
     category: "Tradicional",
-    height: "medium" as const,
-    caption: "A beleza das nossas raizes culturais",
+    caption: "A beleza das nossas raízes culturais",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SaveGram.App_632026361_18559516645043485_4835030053296608185_n-EsJTI6OSGKyaHj35Fvhzg0UAUf8ZQo.jpg",
-    alt: "Inocencia Gaisse em vestido africano estampado",
+    alt: "Inocência Gaisse em vestido africano estampado",
     category: "Casual",
-    height: "short" as const,
     caption: "Estilo que celebra a nossa identidade",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SaveGram.App_582067656_18541103893043485_863687450632386772_n-YvMiiRw1UsJy965yyyqmrcWzc2xDcb.jpg",
-    alt: "Inocencia Gaisse em traje tradicional completo",
+    alt: "Inocência Gaisse em traje tradicional completo",
     category: "Tradicional",
-    height: "tall" as const,
-    caption: "Orgulho e graca em traje tradicional",
+    caption: "Orgulho e graça em traje tradicional",
   },
 ]
-
-const heightMap = {
-  tall: "aspect-[3/5]",
-  medium: "aspect-[3/4]",
-  short: "aspect-[4/5]",
-}
-
-const categories = ["Todas", "Profissional", "Tradicional", "Casual"]
 
 function PinCard({
   image,
@@ -52,69 +43,31 @@ function PinCard({
   index: number
   onOpen: () => void
 }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.1 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <div
-      ref={ref}
-      className="mb-5 break-inside-avoid"
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(30px)",
-        transition: `opacity 0.5s ease ${index * 120}ms, transform 0.5s ease ${index * 120}ms`,
-      }}
+      className="group relative mb-5 break-inside-avoid overflow-hidden rounded-2xl bg-card shadow-md transition-all hover:shadow-xl hover:-translate-y-1 cursor-pointer"
+      onClick={onOpen}
     >
-      <button
-        onClick={onOpen}
-        className="group relative w-full overflow-hidden rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-      >
-        <div className={`relative ${heightMap[image.height]} w-full overflow-hidden`}>
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          />
+      <div className="relative">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={600}
+          height={800}
+          className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
 
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(20,20%,10%)]/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-          {/* Bottom info on hover */}
-          <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-            <p className="text-sm font-medium text-[hsl(30,33%,97%)]">
-              {image.caption}
-            </p>
-            <span className="text-xs text-[hsl(30,33%,80%)]">{image.category}</span>
-          </div>
-
-          {/* Heart icon on hover */}
-          <div className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-[hsl(30,33%,97%)]/90 opacity-0 shadow-md transition-all duration-300 group-hover:opacity-100">
-            <Heart className="h-4 w-4 text-primary" />
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm">
+            <ZoomIn className="h-6 w-6" />
           </div>
         </div>
-      </button>
+      </div>
 
-      {/* Category tag below card (Pinterest style) */}
-      <div className="mt-2.5 flex items-center gap-2 px-1">
-        <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-[11px] font-medium text-primary">
-          {image.category}
-        </span>
+      <div className="p-4">
+        <p className="text-sm font-medium text-foreground">{image.caption}</p>
+        <p className="mt-1 text-xs text-muted-foreground">{image.category}</p>
       </div>
     </div>
   )
@@ -123,6 +76,11 @@ function PinCard({
 export function GallerySection() {
   const [selectedCategory, setSelectedCategory] = useState("Todas")
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const filteredImages =
     selectedCategory === "Todas"
@@ -152,7 +110,11 @@ export function GallerySection() {
       if (e.key === "ArrowLeft") goPrev()
     }
     window.addEventListener("keydown", handleKey)
-    return () => window.removeEventListener("keydown", handleKey)
+    document.body.style.overflow = "hidden" // Prevent background scroll
+    return () => {
+      window.removeEventListener("keydown", handleKey)
+      document.body.style.overflow = "" // Restore scroll
+    }
   }, [lightboxIndex, goNext, goPrev])
 
   return (
@@ -171,8 +133,8 @@ export function GallerySection() {
             Momentos Especiais
           </h2>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
-            Uma colecao de momentos que capturam a essencia da minha jornada,
-            cultura e missao.
+            Uma coleção de momentos que capturam a essência da minha jornada,
+            cultura e missão.
           </p>
         </div>
 
@@ -206,10 +168,10 @@ export function GallerySection() {
         </div>
       </div>
 
-      {/* Lightbox with navigation */}
-      {lightboxIndex !== null && filteredImages[lightboxIndex] && (
+      {/* Lightbox with navigation - Portal */}
+      {mounted && lightboxIndex !== null && filteredImages[lightboxIndex] && createPortal(
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-[hsl(20,20%,8%)]/95 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[hsl(20,20%,8%)]/95 p-4 backdrop-blur-sm"
           onClick={closeLightbox}
           role="dialog"
           aria-label="Imagem ampliada"
@@ -239,24 +201,31 @@ export function GallerySection() {
 
           {/* Image */}
           <div
-            className="relative max-h-[85vh] max-w-4xl overflow-hidden rounded-3xl"
+            className="relative max-h-[85vh] max-w-4xl overflow-hidden rounded-3xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={filteredImages[lightboxIndex].src}
               alt={filteredImages[lightboxIndex].alt}
-              width={800}
-              height={1000}
+              width={1200}
+              height={1600}
+              quality={90}
               className="max-h-[85vh] w-auto object-contain"
+              priority
             />
             {/* Caption bar */}
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[hsl(20,20%,8%)] to-transparent px-6 pb-6 pt-12">
-              <p className="text-sm font-medium text-[hsl(30,33%,97%)]">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[hsl(20,20%,8%)] via-[hsl(20,20%,8%)]/80 to-transparent px-8 pb-8 pt-20">
+              <p className="text-lg font-medium text-[hsl(30,33%,97%)]">
                 {filteredImages[lightboxIndex].caption}
               </p>
-              <span className="mt-1 text-xs text-[hsl(30,33%,80%)]">
-                {lightboxIndex + 1} / {filteredImages.length}
-              </span>
+              <div className="mt-2 flex items-center justify-between">
+                <span className="inline-block rounded-full bg-[hsl(30,33%,97%)]/10 px-3 py-1 text-xs text-[hsl(30,33%,80%)]">
+                  {filteredImages[lightboxIndex].category}
+                </span>
+                <span className="text-xs text-[hsl(30,33%,50%)]">
+                  {lightboxIndex + 1} / {filteredImages.length}
+                </span>
+              </div>
             </div>
           </div>
 
@@ -268,12 +237,13 @@ export function GallerySection() {
                 goNext()
               }}
               className="absolute right-4 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-[hsl(30,33%,97%)]/10 text-[hsl(30,33%,97%)] transition-colors hover:bg-[hsl(30,33%,97%)]/20"
-              aria-label="Proxima imagem"
+              aria-label="Próxima imagem"
             >
               <ChevronRight className="h-6 w-6" />
             </button>
           )}
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   )

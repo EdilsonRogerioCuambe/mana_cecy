@@ -63,15 +63,15 @@ export function CtaSection() {
                 </span>
               </div>
 
-              <h2 className="font-serif text-4xl font-bold leading-[1.1] text-white md:text-5xl lg:text-6xl">
+              <h2 className="font-serif text-4xl font-bold leading-[1.1] text-white md:text-5xl lg:text-6xl text-balance">
                 Vamos fortalecer{" "}
-                <span className="italic text-primary">familias</span> juntos.
+                <span className="italic text-primary">famílias</span> juntos.
               </h2>
 
               <p className="max-w-xl text-lg leading-relaxed text-white/80 md:text-xl">
                 Estou pronta para caminhar consigo nesta jornada de
-                transformacao. Juntos, podemos construir lares mais fortes e
-                familias mais felizes.
+                transformação. Juntos, podemos construir lares mais fortes e
+                famílias mais felizes.
               </p>
 
               {/* Buttons */}
@@ -105,8 +105,8 @@ export function CtaSection() {
               }}
             >
               {[
-                { number: "10+", label: "Anos de experiencia" },
-                { number: "500+", label: "Familias orientadas" },
+                { number: "10+", label: "Anos de experiência" },
+                { number: "500+", label: "Famílias orientadas" },
                 { number: "100+", label: "Palestras realizadas" },
               ].map((stat) => (
                 <div
