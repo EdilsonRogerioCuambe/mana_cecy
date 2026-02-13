@@ -105,12 +105,12 @@ export function ContactSection() {
         </div>
 
         {/* Contact info cards row */}
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {contactCards.map((card, i) => (
             <a
               key={card.title}
               href={card.href}
-              className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all hover:border-primary/30 hover:shadow-lg"
+              className="group flex flex-col items-start gap-4 rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(20px)",
@@ -118,13 +118,13 @@ export function ContactSection() {
               }}
             >
               <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${card.color} transition-colors group-hover:bg-primary group-hover:text-primary-foreground`}>
-                <card.icon className="h-5 w-5" />
+                <card.icon className="h-6 w-6" />
               </div>
               <div className="min-w-0">
-                <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground/80">
                   {card.title}
                 </p>
-                <p className="mt-0.5 truncate text-sm font-semibold text-foreground">
+                <p className="mt-1 truncate text-base font-semibold text-foreground">
                   {card.value}
                 </p>
               </div>
@@ -133,10 +133,10 @@ export function ContactSection() {
         </div>
 
         {/* Main content grid */}
-        <div className="mt-12 grid gap-8 lg:grid-cols-5">
+        <div className="mt-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Left side: visual + socials */}
           <div
-            className="flex flex-col gap-6 lg:col-span-2"
+            className="flex flex-col gap-8 lg:col-span-5"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateX(0)" : "translateX(-30px)",
@@ -144,57 +144,57 @@ export function ContactSection() {
             }}
           >
             {/* Featured image card */}
-            <div className="relative overflow-hidden rounded-3xl">
-              <div className="relative aspect-[4/3]">
+            <div className="relative overflow-hidden rounded-[2rem] shadow-xl">
+              <div className="relative aspect-[4/5] w-full">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SaveGram.App_599397525_18545338651043485_97361349057261757_n-1tKAZ5BsTOsxPVk2dS9BHIIAdha3k5.jpg"
                   alt="Inocencia Gaisse"
                   fill
                   className="object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(20,20%,10%)]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(20,20%,10%)] via-[hsl(20,20%,10%)]/20 to-transparent" />
               </div>
-              <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6">
-                <p className="font-serif text-xl font-bold text-[hsl(30,33%,97%)]">
+              <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-8">
+                <p className="font-serif text-2xl font-bold text-white">
                   Vamos conversar?
                 </p>
-                <p className="text-sm text-[hsl(30,33%,85%)]">
+                <p className="text-white/80">
                   Respondo todas as mensagens em ate 24 horas.
                 </p>
               </div>
             </div>
 
             {/* Social links card */}
-            <div className="rounded-2xl border border-border bg-card p-6">
-              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-foreground">
-                Redes Sociais
+            <div className="rounded-3xl border border-border bg-card p-8">
+              <h4 className="mb-6 text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                Siga nas Redes
               </h4>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-4">
                 <a
                   href="#"
-                  className="group flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-primary/5"
+                  className="group flex items-center gap-4 rounded-2xl border border-border/50 bg-background p-4 transition-all hover:border-primary/20 hover:shadow-md"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#dc2743] text-[hsl(30,33%,97%)]">
-                    <Instagram className="h-4 w-4" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#dc2743] text-white shadow-sm">
+                    <Instagram className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-foreground">Instagram</p>
+                    <p className="font-semibold text-foreground">Instagram</p>
                     <p className="text-xs text-muted-foreground">@inocenciagaisse</p>
                   </div>
-                  <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground opacity-0 transition-all group-hover:opacity-100" />
+                  <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground/50 transition-all group-hover:translate-x-1 group-hover:text-primary" />
                 </a>
                 <a
                   href="#"
-                  className="group flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-primary/5"
+                  className="group flex items-center gap-4 rounded-2xl border border-border/50 bg-background p-4 transition-all hover:border-primary/20 hover:shadow-md"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1877f2] text-[hsl(30,33%,97%)]">
-                    <Facebook className="h-4 w-4" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1877f2] text-white shadow-sm">
+                    <Facebook className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-foreground">Facebook</p>
+                    <p className="font-semibold text-foreground">Facebook</p>
                     <p className="text-xs text-muted-foreground">Mana dos Manos</p>
                   </div>
-                  <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground opacity-0 transition-all group-hover:opacity-100" />
+                  <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground/50 transition-all group-hover:translate-x-1 group-hover:text-primary" />
                 </a>
               </div>
             </div>
@@ -204,18 +204,17 @@ export function ContactSection() {
               href="https://wa.me/258840000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-8 py-5 text-sm font-semibold text-[hsl(30,33%,97%)] transition-all hover:shadow-lg hover:brightness-105"
+              className="group flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 py-5 text-base font-bold text-white shadow-lg shadow-[#25D366]/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#25D366]/30"
             >
               <MessageCircle className="h-5 w-5" />
               Conversar no WhatsApp
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
 
           {/* Right side: Form */}
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-6 rounded-3xl border border-border bg-card p-8 lg:col-span-3 lg:p-10"
+            className="flex flex-col gap-6 rounded-[2.5rem] border border-border bg-card p-8 shadow-sm lg:col-span-7 lg:p-12"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateX(0)" : "translateX(30px)",
