@@ -73,7 +73,7 @@ export function Navigation() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="absolute inset-x-0 top-full h-[calc(100vh-100%)] overflow-y-auto bg-background/98 backdrop-blur-lg shadow-lg lg:hidden">
+        <div className="absolute inset-x-0 top-full h-screen bg-background/95 backdrop-blur-xl shadow-lg lg:hidden pb-32">
           <div className="flex min-h-full flex-col justify-center gap-6 px-6 py-8">
             {navLinks.map((link) => (
               <a
