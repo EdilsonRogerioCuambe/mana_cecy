@@ -1,8 +1,8 @@
 "use client"
 
-import Image from "next/image"
 import { ArrowRight, Heart, Phone } from "lucide-react"
-import { useRef, useEffect, useState } from "react"
+import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 
 export function CtaSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -23,7 +23,7 @@ export function CtaSection() {
   }, [])
 
   return (
-    <section ref={ref} className="relative py-10 lg:py-16">
+    <section ref={ref} className="relative overflow-hidden py-10 lg:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[2rem] lg:rounded-[2.5rem]">
           {/* Background image */}

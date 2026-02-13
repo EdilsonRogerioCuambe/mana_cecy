@@ -1,18 +1,18 @@
 "use client"
 
-import Image from "next/image"
 import {
-  Mail,
-  Phone,
-  MapPin,
-  Instagram,
-  Facebook,
-  Send,
-  ArrowRight,
-  Clock,
-  MessageCircle,
+    ArrowRight,
+    Clock,
+    Facebook,
+    Instagram,
+    Mail,
+    MapPin,
+    MessageCircle,
+    Phone,
+    Send,
 } from "lucide-react"
-import { useState, useRef, useEffect } from "react"
+import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -84,7 +84,7 @@ export function ContactSection() {
   ]
 
   return (
-    <section ref={sectionRef} id="contato" className="py-20 lg:py-32">
+    <section ref={sectionRef} id="contato" className="overflow-hidden py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-center gap-4 text-center">
