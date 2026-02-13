@@ -10,6 +10,7 @@ import {
     MessageCircle,
     Phone,
     Send,
+    Youtube,
 } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
@@ -84,8 +85,8 @@ export function ContactSection() {
   ]
 
   return (
-    <section ref={sectionRef} id="contato" className="overflow-hidden py-20 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section ref={sectionRef} id="contato" className="overflow-hidden py-16 lg:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-center gap-4 text-center">
           <div className="flex items-center gap-3">
@@ -95,22 +96,22 @@ export function ContactSection() {
             </span>
             <div className="h-px w-12 bg-primary" />
           </div>
-          <h2 className="font-serif text-4xl font-bold text-foreground md:text-5xl">
+          <h2 className="font-serif text-3xl font-bold text-foreground md:text-5xl">
             Fale Comigo
           </h2>
-          <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Estou aqui para ajudar. Entre em contato para agendar uma sessao,
+          <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Estou aqui para ajudar. Entre em contato para agendar uma sessão,
             solicitar uma palestra ou simplesmente conversar.
           </p>
         </div>
 
         {/* Contact info cards row */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8">
           {contactCards.map((card, i) => (
             <a
               key={card.title}
               href={card.href}
-              className="group flex flex-col items-start gap-4 rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
+              className="group flex flex-col items-start gap-4 rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg sm:p-6"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(20px)",
@@ -124,7 +125,7 @@ export function ContactSection() {
                 <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground/80">
                   {card.title}
                 </p>
-                <p className="mt-1 truncate text-base font-semibold text-foreground">
+                <p className="mt-1 truncate text-sm font-semibold text-foreground sm:text-base">
                   {card.value}
                 </p>
               </div>
@@ -133,10 +134,10 @@ export function ContactSection() {
         </div>
 
         {/* Main content grid */}
-        <div className="mt-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
+        <div className="mt-12 grid gap-8 lg:mt-16 lg:grid-cols-12 lg:gap-12">
           {/* Left side: visual + socials */}
           <div
-            className="flex flex-col gap-8 lg:col-span-5"
+            className="flex flex-col gap-6 lg:col-span-5 lg:gap-8"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateX(0)" : "translateX(-30px)",
@@ -148,30 +149,32 @@ export function ContactSection() {
               <div className="relative aspect-[4/5] w-full">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SaveGram.App_599397525_18545338651043485_97361349057261757_n-1tKAZ5BsTOsxPVk2dS9BHIIAdha3k5.jpg"
-                  alt="Inocencia Gaisse"
+                  alt="Inocência Gaisse"
                   fill
                   className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[hsl(20,20%,10%)] via-[hsl(20,20%,10%)]/20 to-transparent" />
               </div>
-              <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-8">
+              <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6 sm:p-8">
                 <p className="font-serif text-2xl font-bold text-white">
                   Vamos conversar?
                 </p>
                 <p className="text-white/80">
-                  Respondo todas as mensagens em ate 24 horas.
+                  Respondo todas as mensagens em até 24 horas.
                 </p>
               </div>
             </div>
 
             {/* Social links card */}
-            <div className="rounded-3xl border border-border bg-card p-8">
+            <div className="rounded-3xl border border-border bg-card p-6 sm:p-8">
               <h4 className="mb-6 text-sm font-bold uppercase tracking-widest text-muted-foreground">
                 Siga nas Redes
               </h4>
               <div className="flex flex-col gap-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/mana_dos_manos/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center gap-4 rounded-2xl border border-border/50 bg-background p-4 transition-all hover:border-primary/20 hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#dc2743] text-white shadow-sm">
@@ -179,12 +182,14 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Instagram</p>
-                    <p className="text-xs text-muted-foreground">@inocenciagaisse</p>
+                    <p className="text-xs text-muted-foreground">@mana_dos_manos</p>
                   </div>
                   <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground/50 transition-all group-hover:translate-x-1 group-hover:text-primary" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/inocencia.gaisse/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center gap-4 rounded-2xl border border-border/50 bg-background p-4 transition-all hover:border-primary/20 hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1877f2] text-white shadow-sm">
@@ -192,6 +197,21 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Facebook</p>
+                    <p className="text-xs text-muted-foreground">Inocência Gaisse</p>
+                  </div>
+                  <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground/50 transition-all group-hover:translate-x-1 group-hover:text-primary" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@manadosmanos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 rounded-2xl border border-border/50 bg-background p-4 transition-all hover:border-primary/20 hover:shadow-md"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-sm">
+                    <Youtube className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">YouTube</p>
                     <p className="text-xs text-muted-foreground">Mana dos Manos</p>
                   </div>
                   <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground/50 transition-all group-hover:translate-x-1 group-hover:text-primary" />
@@ -204,7 +224,7 @@ export function ContactSection() {
               href="https://wa.me/258840000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 py-5 text-base font-bold text-white shadow-lg shadow-[#25D366]/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#25D366]/30"
+              className="group flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#25D366]/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#25D366]/30"
             >
               <MessageCircle className="h-5 w-5" />
               Conversar no WhatsApp
@@ -214,7 +234,7 @@ export function ContactSection() {
           {/* Right side: Form */}
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-6 rounded-[2.5rem] border border-border bg-card p-8 shadow-sm lg:col-span-7 lg:p-12"
+            className="flex flex-col gap-6 rounded-[2.5rem] border border-border bg-card p-6 shadow-sm sm:p-8 lg:col-span-7 lg:p-12"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateX(0)" : "translateX(30px)",
@@ -226,7 +246,7 @@ export function ContactSection() {
                 Envie uma Mensagem
               </h3>
               <p className="text-sm text-muted-foreground">
-                Preencha o formulario abaixo e entrarei em contato consigo brevemente.
+                Preencha o formulário abaixo e entrarei em contato consigo brevemente.
               </p>
             </div>
 
@@ -340,7 +360,7 @@ export function ContactSection() {
             </button>
 
             <p className="text-center text-xs text-muted-foreground">
-              Ao enviar, voce concorda com a nossa politica de privacidade.
+              Ao enviar, você concorda com a nossa política de privacidade.
             </p>
           </form>
         </div>

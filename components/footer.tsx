@@ -1,4 +1,4 @@
-import { Facebook, Heart, Instagram, Mail } from "lucide-react"
+import { Facebook, Heart, Instagram, Mail, Youtube } from "lucide-react"
 
 const quickLinks = [
   { href: "#inicio", label: "Início" },
@@ -30,18 +30,31 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/mana_dos_manos/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-background text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/inocencia.gaisse/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-background text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 aria-label="Facebook"
               >
                 <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.youtube.com/@manadosmanos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-background text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                aria-label="YouTube"
+              >
+                <Youtube className="h-4 w-4" />
               </a>
               <a
                 href="mailto:contato@inocenciagaisse.com"
